@@ -6,7 +6,7 @@
 /*   By: jepoujol <jepoujol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 14:14:51 by jepoujol          #+#    #+#             */
-/*   Updated: 2019/01/28 14:45:18 by jepoujol         ###   ########.fr       */
+/*   Updated: 2019/04/09 10:56:16 by jepoujol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int		ft_nbdiese_valide(char *str)
 			return (-1);
 		if (str[i] == '\n' && str[i + 1] == '\n' && cpt == 4)
 			cpt = 0;
-		else if ((str[i] == '\n' && str[i + 1] == '\n') && cpt != 4)
+		else if ((str[i] == '\n' && str[i + 1] == '\n' && cpt != 4)
+				|| (str[i] == '\n' && str[i + 1] == '\0' && cpt != 4))
 			return (-1);
 	}
 	return (1);
