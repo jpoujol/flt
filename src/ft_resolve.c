@@ -6,7 +6,7 @@
 /*   By: jepoujol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 15:13:35 by jepoujol          #+#    #+#             */
-/*   Updated: 2019/05/09 15:13:42 by jepoujol         ###   ########.fr       */
+/*   Updated: 2019/05/09 17:22:18 by jepoujol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,21 @@ static void		ft_removetetri(t_flt *flt, t_coor *coor)
 	}
 }
 
-int				ft_resolve(t_flt *flt, t_coor *coor)
+void			ft_resolve(t_flt *flt, t_coor *coor)
 {
 	int		map_size;
 
 	map_size = 2;
 	if (ft_gen_map(&(flt->map), map_size) == 0)
-		return (FALSE);
+		return ;
 	while (recursion(flt, coor, map_size) == FALSE)
 	{
 		ft_free_map(flt);
 		map_size++;
 		if (ft_gen_map(&flt->map, map_size) == 0)
-			return (0);
+			return ;
 	}
-	return (0);
+	return ;
 }
 
 t_bool			recursion(t_flt *flt, t_coor *coor, int map_size)

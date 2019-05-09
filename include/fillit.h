@@ -6,7 +6,7 @@
 /*   By: jepoujol <jepoujol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 15:47:19 by jepoujol          #+#    #+#             */
-/*   Updated: 2019/05/09 15:07:44 by jepoujol         ###   ########.fr       */
+/*   Updated: 2019/05/09 17:22:05 by jepoujol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int					ft_getnblink(char *str);
 int					ft_checkfile(char *str);
 int					ft_ispace(t_flt *flt, t_coor *coor, int row, int col);
 t_bool				recursion(t_flt *flt, t_coor *coor, int size);
-int					ft_resolve(t_flt *flt, t_coor *coor);
+void				ft_resolve(t_flt *flt, t_coor *coor);
 void				ft_print_tetri(char ***tetri);
 void				ft_print_map(char **map);
 void				ft_print_coor(t_coor **begin_coor);
