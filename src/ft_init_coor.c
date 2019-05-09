@@ -6,7 +6,7 @@
 /*   By: jepoujol <jepoujol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 17:09:16 by jepoujol          #+#    #+#             */
-/*   Updated: 2019/04/09 10:58:55 by jepoujol         ###   ########.fr       */
+/*   Updated: 2019/05/09 14:44:57 by jepoujol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_coor			*ft_create_lst(char **tetri, char c)
 {
 	t_coor	*coor;
 
-	if (!(coor = (t_coor*)malloc(sizeof(t_coor))))
+	if (!(coor = (t_coor*)ft_memalloc(sizeof(t_coor))))
 		return ((t_coor*)NULL);
 	coor = ft_fillcoor(tetri, &coor, c);
 	coor->next = NULL;

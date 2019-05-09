@@ -75,10 +75,10 @@ OBJ = $(addprefix $(PATH_OBJ)/,$(OBJ_NAME))
 
 HEADER = -I ./libft.h
 
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 $(NAME): $(OBJ)
-	@gcc $(FLAGS) -c $(SRC) $(HEADER)
+	@gcc $(CFLAGS) -c $(SRC) $(HEADER)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 	@echo "libft compiled"

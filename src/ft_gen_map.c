@@ -6,7 +6,7 @@
 /*   By: jepoujol <jepoujol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 12:32:04 by jepoujol          #+#    #+#             */
-/*   Updated: 2019/01/28 12:52:34 by jepoujol         ###   ########.fr       */
+/*   Updated: 2019/04/15 18:33:59 by jepoujol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int			ft_gen_map(char ***map, size_t size)
 	if (!(*map = (char**)ft_memalloc(sizeof(char*) * (size + 1))))
 		return (0);
 	(*map)[size] = NULL;
-	while (++i < size)
+	while (++i < (int)size)
 	{
 		if (!((*map)[i] = ft_strnew(sizeof(char) * (size + 1))))
 			return (0);
-		while (++j < size)
+		while (++j < (int)size)
 		{
 			(*map)[i][j] = '.';
 		}

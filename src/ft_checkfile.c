@@ -6,7 +6,7 @@
 /*   By: jepoujol <jepoujol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 12:05:52 by jepoujol          #+#    #+#             */
-/*   Updated: 2019/04/09 10:49:52 by jepoujol         ###   ########.fr       */
+/*   Updated: 2019/04/15 18:46:42 by jepoujol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ static int		ft_tetri_is_square(char *str)
 		if (ft_tetri_is_square2(str, &i, &cptx, &cpty) == -1)
 			return (-1);
 	}
+	if (str[i] == '\0' && str[i - 2] != '\n')
+		return (-1);
 	return (1);
 }
 

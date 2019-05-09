@@ -6,7 +6,7 @@
 /*   By: jepoujol <jepoujol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 16:48:14 by jepoujol          #+#    #+#             */
-/*   Updated: 2019/01/28 16:03:11 by jepoujol         ###   ########.fr       */
+/*   Updated: 2019/05/09 15:14:46 by jepoujol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ int		main(int ac, char **av)
 	int		fd;
 
 	if (ac != 2)
+	{
 		ft_putendl("./fillit [file_name]");
+		return (0);
+	}
 	fd = open(av[1], O_RDONLY);
 	flt.buf = ft_strnew((BUFF_SIZE + 1) * sizeof(char));
 	if (fd < 0 || read(fd, flt.buf, 0) == -1)

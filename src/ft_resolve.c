@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   resolve.c                                          :+:      :+:    :+:   */
+/*   ft_resolve.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jepoujol <jepoujol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jepoujol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 09:02:10 by jepoujol          #+#    #+#             */
-/*   Updated: 2019/01/28 15:35:29 by jepoujol         ###   ########.fr       */
+/*   Created: 2019/05/09 15:13:35 by jepoujol          #+#    #+#             */
+/*   Updated: 2019/05/09 15:13:42 by jepoujol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void		ft_removetetri(t_flt *flt, t_coor *coor)
 	}
 }
 
-int				solve(t_flt *flt, t_coor **begin_coor, t_coor *coor)
+int				ft_resolve(t_flt *flt, t_coor *coor)
 {
 	int		map_size;
 

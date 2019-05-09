@@ -6,14 +6,14 @@
 #    By: jepoujol <jepoujol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/07 15:20:38 by jepoujol          #+#    #+#              #
-#    Updated: 2019/01/29 10:40:54 by jepoujol         ###   ########.fr        #
+#    Updated: 2019/05/09 15:07:53 by jepoujol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 
 PATH_SRC = ./src/
-PATH_OBJ = ./
+PATH_OBJ = ./obj/
 
 SRC_NAME = main.c \
 			fillit.c \
@@ -31,7 +31,7 @@ SRC_NAME = main.c \
 			ft_ispace.c \
 			ft_addtetri.c \
 			ft_init_coor.c \
-			resolve.c \
+			ft_resolve.c \
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -40,7 +40,7 @@ OBJ = $(addprefix $(PATH_OBJ),$(OBJ_NAME))
 
 HEADER = -I ./libft.h
 
-CC = clang
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -I includes
 LDFLAGS = -Llibft
@@ -48,13 +48,13 @@ LDLIBS = -lft
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@mkdir $(PATH_OBJ) 2> /dev/null || true
-	$(CC) $(CLFAGS) $(CPPFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
+
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	@cd libft ; make; cd ..;
 	$(CC) $(LDFLAGS) $(LDLIBS) $^ -o $@
-
-all: $(NAME)
 
 clean:
 	@cd libft ; make clean; cd ..;
@@ -68,6 +68,5 @@ fclean: clean
 	@echo "fillit fclean"
 
 re: fclean all
-	@cd libft; make re; cd ..;
 
 .PHONY: all clean fclean re
